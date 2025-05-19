@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: devmobile
+  datasource:
+    url: ${PG_DB_URL:jdbc:postgresql://localhost:5432/oncomind}
+    username: ${PG_DB_USERNAME:admin}
+    password: ${PG_DB_PASSWORD:admin}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: never
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+
+jwt:
+  secret: ;4]j<LW8xbwEyN#ePQ{aX.jvVjWu-F}[
+
+# logging:
+#   level:
+#     org.springframework.security: TRACE
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.authentication: TRACE
+    org.springframework.security.web.access: TRACE
+
+server:
+  servlet:
+    context-path: /api/v1
