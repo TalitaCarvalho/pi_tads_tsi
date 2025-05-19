@@ -35,12 +35,7 @@ import { useRouter } from 'vue-router';
 const $q = useQuasar();
 const $router = useRouter();
 const $authStore = useAuthStore();
-const form = ref({
-  name: "Marto Francisco",
-  cpf: "29024529323",
-  email: "martof@email.com",
-  password: "senha123"
-});
+const form = ref({});
 
 async function onSubmit() {
   const { error } = await $authStore.signup(form.value);

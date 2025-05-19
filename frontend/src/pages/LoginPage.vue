@@ -32,7 +32,7 @@ const $q = useQuasar();
 const $router = useRouter();
 const $authStore = useAuthStore();
 const email = ref(null);
-const password = ref('senha123');
+const password = ref(null);
 
 async function onSubmit() {
   const { error } = await $authStore.login({ email: email.value, password: password.value});
