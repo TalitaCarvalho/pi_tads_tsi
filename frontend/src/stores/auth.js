@@ -30,7 +30,6 @@ export const useAuthStore = defineStore('auth', {
       }
     },
     async signup(body) {
-      debugger
       try {
         const response = await AuthService.signup(body);
         if (response.status == 201) {

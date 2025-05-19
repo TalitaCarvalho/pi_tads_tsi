@@ -43,7 +43,6 @@ const form = ref({
 });
 
 async function onSubmit() {
-  debugger
   const { error } = await $authStore.signup(form.value);
   if (error) {
     $q.notify({
