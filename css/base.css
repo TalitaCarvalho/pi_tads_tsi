@@ -10,6 +10,10 @@ body {
     line-height: 1.6;
 }
 
+a {
+    text-decoration: none;
+}
+
 header {
     background-color: #4a90e2;
     color: white;
@@ -70,6 +74,9 @@ section {
 .btn-user {
     background-color: #ffffff;
     color: #4a90e2;
+    padding: .5rem;
+    border-start-start-radius: 10px;
+    border-end-end-radius: 10px;
 }
 
 .btn-psych {

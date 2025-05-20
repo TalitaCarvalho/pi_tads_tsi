@@ -11,7 +11,7 @@
       <q-input v-model="form.email" label="Email" lazy-rules filled
         :rules="['email', val => val && val.length > 0 || 'Campo email não pode ser vazio']" />
 
-      <q-input v-model="form.cpf" label="cpf" lazy-rules filled mask="###.###.###-##"
+      <q-input v-model="form.cpf" label="cpf" lazy-rules filled unmasked-value mask="###.###.###-##"
         :rules="[val => val && val.length > 0 || 'Campo cpf não pode ser vazio']" />
 
       <q-input v-model="form.password" label="Senha" type="password" lazy-rules filled :rules="[
