@@ -114,7 +114,7 @@
 
 <script>
     const contactForm = document.querySelector("#contact-form");
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const data = {
@@ -123,24 +123,18 @@
             message: document.querySelector("#textarea-message").value,
         };
 
-        fetch("https://oncomindbackend.onrender.com/api/v1/contato", {
+        const request = await fetch("http://localhost:8080/api/v1/contato", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data),
         })
-            .then(response => {
-                if (!response.ok) throw new Error("Erro ao enviar mensagem");
-                return response.json();
-            })
-            .then(result => {
-                alert("Mensagem enviada com sucesso!");
-                document.getElementById("contact-form").reset();
-            })
-            .catch(error => {
-                console.error("Erro:", error);
-            });
+
+        if (request.status == 201) {
+            alert("Mensagem enviada com sucesso!");
+            document.getElementById("contact-form").reset();
+        }
     })
 </script>
 

@@ -63,7 +63,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(List.of( "https://*.onrender.com", "https://talitacarvalho.github.io/pi_tads_tsi/"));
+        configuration.setAllowedOriginPatterns(List.of( "https://*.onrender.com", "https://*.github.io"));
         configuration.setAllowedMethods(List.of("GET", "POST", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);
