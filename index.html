@@ -15,6 +15,7 @@
         <a href="#about">Sobre</a>
         <a href="#how">Como funciona</a>
         <a href="#features">Funcionalidade</a>
+        <a href="#contact">Contanto</a>
         <a target="_blank" href="https://oncomindfrontend.onrender.com">Registro</a>
     </nav>
 </header>
@@ -30,7 +31,8 @@
 <section id="about">
     <div class="section-title">
         <h2>Sobre Oncomind</h2>
-        <p>Oncomind é uma plataforma segura que uma gama de profissionais qualificados em atendimento psiquiátrico, tudo na palma da sua mão.</p>
+        <p>Oncomind é uma plataforma segura que uma gama de profissionais qualificados em atendimento psiquiátrico, tudo
+            na palma da sua mão.</p>
     </div>
 </section>
 
@@ -84,18 +86,62 @@
     </div>
 </section>
 
+<section id="contact">
+    <div class="section-title">
+        <h2>Ainda na dúvida?</h2>
+        <p>Manda uma mensagem para nós, um de nossos atendentes entrará em contato em breve</p>
+    </div>
+    <form id="contact-form" class="contact-form">
+        <div class="form-field">
+            <label for="input-name">Nome</label>
+            <input id="input-name" class="form-field_input" />
+        </div>
+        <div class="form-field">
+            <label for="input-email">Email</label>
+            <input id="input-email" class="form-field_input" type="email" />
+        </div>
+        <div class="form-field">
+            <label for="textarea-message">Mensagem</label>
+            <textarea id="textarea-message" class="form-field_textarea" maxlength="500"></textarea>
+        </div>
+        <button class="btn-user" style="max-width: 200px;" type="submit">Enviar mensagem</button>
+    </form>
+</section>
+
 <footer>
     <p>© 2025 Oncomind. Todos os direitos reservados. | contact@oncomind.com</p>
 </footer>
 
 <script>
-    function registerUser() {
-        window.location.href = "register-user.html";
-    }
+    const contactForm = document.querySelector("#contact-form");
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    function registerPsych() {
-        window.location.href = "register-psychologist.html";
-    }
+        const data = {
+            name: document.querySelector("#input-name").value,
+            email: document.querySelector("#input-email").value,
+            message: document.querySelector("#textarea-message").value,
+        };
+
+        fetch("https://oncomindbackend.onrender.com/api/v1/contato", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => {
+                if (!response.ok) throw new Error("Erro ao enviar mensagem");
+                return response.json();
+            })
+            .then(result => {
+                alert("Mensagem enviada com sucesso!");
+                document.getElementById("contact-form").reset();
+            })
+            .catch(error => {
+                console.error("Erro:", error);
+            });
+    })
 </script>
 
 </body>
