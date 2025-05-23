@@ -20,7 +20,7 @@
         </q-stepper-navigation>
       </q-step>
 
-      <q-step :name="2" title="Selection uma data" icon="eva-clock-outline" :done="step > 2">
+      <q-step :name="2" title="Selecione uma data" icon="eva-clock-outline" :done="step > 2">
         Selecione um data para a consulta
         <div class="flex q-gutter-md">
           <q-input v-model="form.date" label="data" mask="##/##/####" filled>

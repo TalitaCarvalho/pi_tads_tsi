@@ -27,6 +27,6 @@ A plataforma conecta profissionais de saúde mental a pacientes, proporcionando 
 
 ## 🔗 Links do Projeto
 
-- 🎥 **Vídeo de Apresentação**: [Inserir link aqui]
+- 🎥 **Vídeo de Apresentação**: [apresentação do trabalho final](https://youtu.be/R508mWB4IGw)
 - 🌐 **Landing Page**: https://talitacarvalho.github.io/pi_tads_tsi/
 - 🌐 **Aplicação**: https://oncomindfrontend.onrender.com/
